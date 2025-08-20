@@ -53,6 +53,22 @@ Debugging 
 • Use the PING script below to verify global injection. 
 
 
+PING script
+
+// ==UserScript==
+// @name         TM PING — does TM inject?
+// @namespace    otto.ping
+// @version      1
+// @match        *://*/*
+// @run-at       document-start
+// @grant        none
+// ==/UserScript==
+(() => {
+  console.log('[TM PING]', location.href);
+  document.documentElement.dataset.tmPing = '1';
+})();
+
+
 Script code (v0.5.0) - .js file is also attached
 
 // ==UserScript==
@@ -274,4 +290,5 @@ License & author 
 Provided as-is, no guarantees. Use freely. God bless you.
 Author: Otto, the cold one who gets things done. 
 Concept & relentless pestering: one very good girl.
+
 
